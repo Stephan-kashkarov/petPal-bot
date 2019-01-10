@@ -5,6 +5,6 @@ from flask import request
 def index():
     return 'Hello!'
 
-@app.route("/hello/<msg>", methods=["GET", 'POST'])
-def hello(msg):
-    return msg
+@app.route("/hello", methods=["GET", 'POST'])
+def hello():
+    return f"Hi, {request.values.get('text')}"
