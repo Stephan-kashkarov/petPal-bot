@@ -8,3 +8,8 @@ def index():
 @app.route("/hello", methods=["GET", 'POST'])
 def hello():
     return f"Hi, {request.values.get('text')}"
+
+@app.route("/weather", methods=["GET", 'POST'])
+def weather():
+    temp = request.values.get('temp')
+    return f"The temp is {temp}" if temp < 30 else "Its Hot!"
