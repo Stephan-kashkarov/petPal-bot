@@ -11,5 +11,5 @@ def hello():
 
 @app.route("/weather", methods=["GET", 'POST'])
 def weather():
-    temp = request.values.get('temp')
+    temp = int(request.values.get('temp'))
     return f"The temp is {temp}" if temp < 30 else "Its Hot!"
