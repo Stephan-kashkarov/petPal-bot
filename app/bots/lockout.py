@@ -9,12 +9,13 @@ class Bot:
             'SEND': self.send,
         }
         self.text = text
-        self.places = [text]
+        self.places = text.split()
 
     def no_query(self):
         if re.search(r".*help.*", self.text, re.I):
             self.state = "LOOKING"
             return self.looking()
+        return "Hi say help to get some help!"
     
     def looking(self):
         check = [re.search(r".*{}.*".format(x), self.text, re.I) for x in self.places]
