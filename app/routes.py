@@ -2,7 +2,7 @@ from app import app
 from flask import request
 from app.bots import lockout
 
-state = ""
+state = "NO QUERY"
 
 @app.route("/")
 def index():
@@ -25,4 +25,6 @@ def talk():
 
 @app.route("/lockout", methods=["POST"])
 def lockoutBot():
-    return lockout.bot(request.values.get("text")).get_func()
+    global state
+    answer, state = lockout.bot(state, request.values.get("text")).get_func()
+    return answer

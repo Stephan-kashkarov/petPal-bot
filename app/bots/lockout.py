@@ -28,4 +28,4 @@ class bot:
         return f"Sending a tutor to {place}!"
     
     def get_func(self):
-        return self.functions[self.state]
+        return self.functions[self.state](), self.state
