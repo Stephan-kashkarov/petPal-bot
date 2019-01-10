@@ -17,4 +17,4 @@ def weather():
 @app.route("/talk", methods=["POST"])
 def talk():
     name = request.values.get("name")
-    print(f"Hi, {name}")
+    return f"Hi, {name}"
