@@ -25,6 +25,7 @@ class bot:
         return "Where are you?"
 
     def send(self, place):
+        self.state = "NO QUERY"
         return f"Sending a tutor to {place}!"
     
     def get_func(self):
