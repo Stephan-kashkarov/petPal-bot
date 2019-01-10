@@ -13,3 +13,8 @@ def hello():
 def weather():
     temp = int(request.values.get('temp'))
     return f"The temp is {temp}" if temp < 30 else "Its Hot!"
+
+@app.route("/talk", methods=["POST"])
+def talk():
+    name = request.values.get("name")
+    print(f"Hi, {name}")
