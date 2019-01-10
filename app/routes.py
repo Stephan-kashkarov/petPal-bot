@@ -26,5 +26,6 @@ def talk():
 @app.route("/lockout", methods=["POST"])
 def lockoutBot():
     global state
-    answer, state = lockout.bot(state, request.values.get("text")).get_func()
+    answer, state = lockout.Bot(state, request.values.get("text")).get_func()
+    print(answer, state)
     return answer

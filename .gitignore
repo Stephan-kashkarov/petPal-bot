@@ -1,2 +1,3 @@
 serverenv
 *.pyc
+.vscode

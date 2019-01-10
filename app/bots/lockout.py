@@ -1,6 +1,6 @@
 import re
 
-class bot:
+class Bot:
     def __init__(self, state="NO QUERY", text=None):
         self.state = state
         self.functions = {
