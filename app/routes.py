@@ -1,5 +1,8 @@
 from app import app
 from flask import request
+from app.bots import lockout
+
+state = ""
 
 @app.route("/")
 def index():
@@ -19,3 +22,7 @@ def talk():
     name = request.values.get("user_name")
     text = request.values.get("text")
     return f"Hi {name}, you said {text}"
+
+@app.route("/lockout", methods=["POST"])
+def lockoutBot():
+    return lockout.bot(request.values.get("text")).get_func()
