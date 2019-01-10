@@ -18,10 +18,10 @@ class Bot:
         return "Hi say help to get some help!"
     
     def looking(self):
-        check = [re.search(r".*{}.*".format(x), self.text, re.I) for x in self.places]
-        if True in check:
+        # check = [re.search(r".*{}.*".format(x), self.text, re.I) for x in self.places]
+        if True: #in check:
             self.state = "SEND"
-            place = self.places[check.index('True')]
+            place = self.text #self.places[check.index('True')]
             return self.send(place)
         return "Where are you?"
 
